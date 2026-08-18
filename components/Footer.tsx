@@ -65,7 +65,7 @@ export default function Footer() {
       <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs">
         <span>© {new Date().getFullYear()} Venduzz. Todos os direitos reservados.</span>
         <div className="flex gap-4">
-          <a href="#" className="hover:text-white transition-colors">Privacidade</a>
+          <a href="/politica-de-privacidade" className="hover:text-white transition-colors">Privacidade</a>
           <a href="#" className="hover:text-white transition-colors">Termos de uso</a>
         </div>
       </div>
