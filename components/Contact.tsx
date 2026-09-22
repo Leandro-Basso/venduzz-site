@@ -1,9 +1,9 @@
 "use client";
 import { MessageCircle, Mail, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { whatsappUrl } from "@/lib/site-config";
 
-const WHATSAPP_URL =
-  "https://wa.me/5511999999999?text=Ol%C3%A1%2C+quero+conhecer+o+Venduzz";
+const WHATSAPP_URL = whatsappUrl("Olá, quero conhecer o Venduzz");
 
 export default function Contact() {
   const [sent, setSent] = useState(false);

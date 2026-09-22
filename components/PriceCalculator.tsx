@@ -2,10 +2,10 @@
 
 import { useState, useMemo } from "react";
 import { Check, Star, MessageCircle, ArrowRight } from "lucide-react";
+import { whatsappUrl } from "@/lib/site-config";
 
 const HUB_URL = "https://hub.venduzz.com.br";
-const WHATSAPP_URL =
-  "https://wa.me/5511999999999?text=Quero+saber+mais+sobre+o+plano+Enterprise+do+Venduzz";
+const WHATSAPP_URL = whatsappUrl("Quero saber mais sobre o plano Enterprise do Venduzz");
 
 export type Plan = {
   id: string;

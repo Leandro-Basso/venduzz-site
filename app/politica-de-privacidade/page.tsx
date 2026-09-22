@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { COMPANY } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade — Venduzz",
@@ -28,15 +29,15 @@ export default function PoliticaDePrivacidadePage() {
         <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
           Como tratamos seus dados
         </h1>
-        <p className="text-sm text-slate-400 mb-10">Última atualização: 18 de agosto de 2026.</p>
+        <p className="text-sm text-slate-400 mb-10">Última atualização: 22 de setembro de 2026.</p>
 
         <Section title="1. Quem somos">
           <p>
             A Venduzz (
             <strong>
-              [PREENCHER: razão social completa], inscrita no CNPJ sob o nº [PREENCHER]
+              {COMPANY.legalName}, inscrita no CNPJ sob o nº {COMPANY.cnpj}
             </strong>
-            , com sede em [PREENCHER: endereço completo]) é a controladora dos dados
+            , com sede na {COMPANY.address}) é a controladora dos dados
             pessoais tratados nos termos desta política, para os fins da Lei Geral de
             Proteção de Dados (Lei nº 13.709/2018 — LGPD).
           </p>

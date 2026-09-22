@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const HUB_URL = "https://hub.venduzz.com.br";
 
@@ -30,8 +31,8 @@ export default function Footer() {
             Produto
           </p>
           <ul className="flex flex-col gap-2 text-sm">
-            <li><a href="#funcionalidades" className="hover:text-white transition-colors">Funcionalidades</a></li>
-            <li><a href="#planos" className="hover:text-white transition-colors">Planos</a></li>
+            <li><Link href="/#funcionalidades" className="hover:text-white transition-colors">Funcionalidades</Link></li>
+            <li><Link href="/#planos" className="hover:text-white transition-colors">Planos</Link></li>
             <li><a href={`${HUB_URL}/register`} className="hover:text-white transition-colors">Criar conta</a></li>
           </ul>
         </div>
@@ -42,7 +43,13 @@ export default function Footer() {
           </p>
           <ul className="flex flex-col gap-2 text-sm">
             {["Mercado Livre", "Shopee", "Amazon", "Tray", "Magalu"].map((m) => (
-              <li key={m}><span className="text-slate-500">{m}</span></li>
+              <li key={m}>
+                {m === "Amazon" ? (
+                  <Link href="/integracoes/amazon" className="hover:text-white transition-colors">{m}</Link>
+                ) : (
+                  <span className="text-slate-500">{m}</span>
+                )}
+              </li>
             ))}
           </ul>
         </div>
@@ -52,7 +59,8 @@ export default function Footer() {
             Suporte
           </p>
           <ul className="flex flex-col gap-2 text-sm">
-            <li><a href="#contato" className="hover:text-white transition-colors">Fale conosco</a></li>
+            <li><Link href="/suporte" className="hover:text-white transition-colors">Central de suporte</Link></li>
+            <li><Link href="/#contato" className="hover:text-white transition-colors">Fale conosco</Link></li>
             <li>
               <a href="mailto:contato@venduzz.com.br" className="hover:text-white transition-colors">
                 contato@venduzz.com.br
@@ -65,8 +73,8 @@ export default function Footer() {
       <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs">
         <span>© {new Date().getFullYear()} Venduzz. Todos os direitos reservados.</span>
         <div className="flex gap-4">
-          <a href="/politica-de-privacidade" className="hover:text-white transition-colors">Privacidade</a>
-          <a href="#" className="hover:text-white transition-colors">Termos de uso</a>
+          <Link href="/politica-de-privacidade" className="hover:text-white transition-colors">Privacidade</Link>
+          <Link href="/termos-de-uso" className="hover:text-white transition-colors">Termos de uso</Link>
         </div>
       </div>
     </footer>

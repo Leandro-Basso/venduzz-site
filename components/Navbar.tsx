@@ -2,13 +2,14 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const HUB_URL = "https://hub.venduzz.com.br";
 
 const links = [
-  { label: "Funcionalidades", href: "#funcionalidades" },
-  { label: "Planos", href: "#planos" },
-  { label: "Contato", href: "#contato" },
+  { label: "Funcionalidades", href: "/#funcionalidades" },
+  { label: "Planos", href: "/#planos" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 export default function Navbar() {
@@ -18,7 +19,7 @@ export default function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50 bg-brand-dark/95 backdrop-blur border-b border-white/10">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logos/logo-venduzz.png"
             alt="Venduzz"
@@ -30,18 +31,18 @@ export default function Navbar() {
           <span className="text-xl font-bold tracking-tight">
             <span className="text-white">vendu</span><span className="text-primary">zz</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               className="text-sm text-slate-300 hover:text-white transition-colors"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -75,14 +76,14 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-brand-dark border-t border-white/10 px-4 py-4 flex flex-col gap-4">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               className="text-slate-300 hover:text-white text-sm"
               onClick={() => setOpen(false)}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
           <hr className="border-white/10" />
           <a href={`${HUB_URL}/login`} className="text-slate-300 text-sm">

@@ -1,8 +1,8 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { whatsappUrl } from "@/lib/site-config";
 
 const HUB_URL = "https://hub.venduzz.com.br";
-const WHATSAPP_URL =
-  "https://wa.me/5511999999999?text=Ol%C3%A1%2C+quero+conhecer+o+Venduzz";
+const WHATSAPP_URL = whatsappUrl("Olá, quero conhecer o Venduzz");
 
 const badges = ["Mercado Livre", "Shopee", "Amazon", "Tray", "Magalu"];
 

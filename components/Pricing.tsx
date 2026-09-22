@@ -1,9 +1,9 @@
 import { Check, Minus, Zap, MessageCircle } from "lucide-react";
 import type { Plan } from "@/components/PriceCalculator";
+import { whatsappUrl } from "@/lib/site-config";
 
 const HUB_URL = "https://hub.venduzz.com.br";
-const WHATSAPP_URL =
-  "https://wa.me/5511999999999?text=Quero+saber+mais+sobre+o+plano+Enterprise+do+Venduzz";
+const WHATSAPP_URL = whatsappUrl("Quero saber mais sobre o plano Enterprise do Venduzz");
 
 function formatPrice(cents: number, isCustom: boolean) {
   if (isCustom || cents === 0) return "Sob consulta";
